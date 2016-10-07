@@ -13,10 +13,18 @@ li p.navbar-text, a.navbar-brand {
   font-weight: bolder;
 }
 
+ul li a {
+  text-transform: uppercase;
+}
+
 .container h1 {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+label {
+  font-weight: bold;
 }
 
 footer.footer {

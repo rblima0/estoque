@@ -10,6 +10,12 @@
 @else
 <h1>Listagem de Produtos</h1>
 
+@if(old('nome'))
+<div class="alert alert-success text-center">
+	<strong>Sucesso !!!</strong> O produto {{old('nome')}} foi adicionado.
+</div>
+@endif
+
 <table class="table table-striped table-bordered table-hover">
 	@foreach($produtos as $p)
 	<tr class="{{ $p->quantidade <=1 ? 'danger' : '' }}">
@@ -26,9 +32,10 @@
 @endforeach
 </table>
 @endif
+
 <h4>
   <span class="label label-danger pull-right">
-    Um ou menos itens no estoque
+  	Um ou menos itens no estoque
   </span>
- </h4>
+</h4>
 @stop
