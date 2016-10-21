@@ -24,6 +24,11 @@
 		<label for="quantidade">Quantidade</label>
 		<input name="quantidade" type="text" class="form-control" placeholder="informe a quantidade...">
 	</div>
+
+	<div class="form-group">
+		<label for="tamanho">Tamanho</label>
+		<input name="tamanho" type="text" class="form-control" placeholder="informe o tamanho...">
+	</div>
 	<button type="submit" class="btn btn-primary btn-block">Adicionar</button>
 </form>
 @stop
