@@ -13,5 +13,8 @@
   <li>
     <b>Quantidade em estoque:</b> {{$p->quantidade}}
   </li>
+  <li>
+    <b>Tamanho:</b> {{$p->tamanho}}
+  </li>
 </ul>
 @stop

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Request;
 use Validator;
 use estoque\Produto;
+use estoque\Http\Requests\ProdutosRequest;
 
 class ProdutoController extends Controller {
 	
@@ -30,27 +31,9 @@ class ProdutoController extends Controller {
         return view('produto/formulario');
     }
 
-    public function adiciona(){
+    public function adiciona(ProdutosRequest $request){
 
-        $validator = Validator::make(
-                ['nome' => Request::input('nome')],
-                ['nome' => 'required|min:5'],
-                ['descricao' => Request::input('descricao')],
-                ['descricao' => 'required|max:255'],
-                ['valor' => Request::input('valor')],
-                ['valor' => 'required|numeric'],
-                ['quantidade' => Request::input('quantidade')],
-                ['quantidade' => 'required|numeric'],
-                ['tamanho' => Request::input('tamanho')],
-                ['tamanho' => 'required|numeric']
-            );
-
-        if($validator->fails()){
-            $validator->messages();
-            return redirect()->action('ProdutoController@novo');
-        }
-
-        Produto::create(Request::all());
+        Produto::create($request->all());
         return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
     }
 
