@@ -7,6 +7,11 @@ class Produto extends Model {
 	protected $table = 'produtos';
 	public $timestamps = false;
 
-	protected $fillable = array('nome', 'descricao', 'valor', 'quantidade', 'tamanho');
+	protected $fillable = array('nome', 'descricao', 'valor', 'quantidade', 'tamanho', 'categoria_id');
 	//Produto::create(Request::all());
+
+	public function categoria(){
+		return $this->belongsTo('estoque\Categoria');
+	}
+
 }

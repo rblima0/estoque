@@ -245,7 +245,9 @@ class ComposerStaticInitb0e7ac5103d57668b8193a578ccc69e6
     );
 
     public static $classMap = array (
+        'AdicionaRelacionamentoProdutoCategoria' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_184141_adiciona_relacionamento_produto_categoria.php',
         'AdicionaTamanhoNoProduto' => __DIR__ . '/../..' . '/database/migrations/2016_10_21_115503_adiciona_tamanho_no_produto.php',
+        'CreateCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_160415_create_categorias_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

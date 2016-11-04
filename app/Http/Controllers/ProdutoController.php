@@ -3,10 +3,15 @@
 use Illuminate\Support\Facades\DB;
 use Request;
 use Validator;
+use estoque\Categoria;
 use estoque\Produto;
 use estoque\Http\Requests\ProdutosRequest;
 
 class ProdutoController extends Controller {
+
+    public function __construct(){
+        $this->middleware('auth', ['only' => ['adiciona', 'remove']]);
+    }    
 	
 	public function lista(){
         $produtos = Produto::all();
@@ -28,7 +33,7 @@ class ProdutoController extends Controller {
     }
 
     public function novo(){
-        return view('produto/formulario');
+        return view('produto/formulario')->with('categorias', Categoria::all());
     }
 
     public function adiciona(ProdutosRequest $request){
